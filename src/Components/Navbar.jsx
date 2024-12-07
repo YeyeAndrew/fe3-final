@@ -1,26 +1,14 @@
-import React, { useReducer } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
+import { useGlobalContext } from "./utils/global.context";
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
-export const initialState = { theme: "ligth", data: [] };
-
-const reducer = (state, action) => {
-  switch (action.type) {
-    case "ligth":
-      return { theme: "ligth", data: [] };
-    case "dark":
-      return { theme: "ligth", data: [] };
-    case "reset":
-      return { theme: "ligth", data: [] };
-    default:
-      throw new Error();
-  }
-};
 
 const Navbar = () => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const { state: { theme }, toggleMode } = useGlobalContext();
+
   return (
-    <nav>
+    <nav className= {theme ? "" : "dark"}>
       {/* Aqui deberan agregar los liks correspondientes a las rutas definidas */}
       <Link to="/">
         <h4>Home</h4>
@@ -32,7 +20,9 @@ const Navbar = () => {
         <h4>Favs</h4>
       </Link>
       {/* Deberan implementar ademas la logica para cambiar de Theme con el button */}
-      <button onClick={() => dispatch( {type: "ligth"} )}>Change Theme</button>
+      <button className="button-theme" onClick={toggleMode}>
+        <img src={theme ? "/images/moon-solid.svg" : "/images/sun-regular.svg"} alt="theme icon" />
+      </button>
     </nav>
   );
 };

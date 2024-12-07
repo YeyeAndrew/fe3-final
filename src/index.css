@@ -25,7 +25,8 @@ h1{
 
 nav{
   display: flex;
-  width: 80vw;
+  align-items: center;
+  width: auto;
   justify-content: flex-start;
   padding: 1rem;
 }
@@ -47,7 +48,7 @@ footer {
   padding: 2rem;
   position: relative;
   bottom: 0;
-  width: 90%;
+  width: auto;
   height: 40px;
   margin-top: 2rem;
 }
@@ -123,4 +124,60 @@ tr:nth-child(even) {
 
 .img {
   height: 30vh;
+}
+
+.star{
+  font-size: 3vh;
+}
+
+.social-media {
+  display: flex;
+  justify-content: right;
+  gap: 10px;
+}
+
+.social-media a img {
+  width: 30px;
+  height: 30px;
+}
+
+.social-icon {
+  filter: invert(1);
+}
+
+.dark .social-icon {
+  filter: invert(0);
+}
+
+.button-theme {
+  background: none;
+  border: none;
+  padding: 2vh;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.button-theme img {
+  width: 5vh;
+  height: 5vh;
+}
+
+.star {
+  border: none;
+  padding: 1vh;
+  cursor: pointer;
+  margin: center;
+  width: 100%;
+}
+
+.star img {
+  width: 3vh;
+  height: 3vh;
+}
+
+.detail-container {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
