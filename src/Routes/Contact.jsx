@@ -9,8 +9,8 @@ const Contact = () => {
   const { state } = useGlobalContext();
 
   return (
-    <div className={state.theme ? "" : "dark"}>
-      <h2>Want to know more?</h2>
+    <div className={`contact-container ${state.theme ? "" : "dark"}`}>
+      <h1>Want to know more?</h1>
       <p>Send us your questions and we will contact you</p>
       <Form/>
     </div>
